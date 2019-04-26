@@ -13,6 +13,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 && \
 	apt-get update -y && \
 	apt-get install -y \
+		gedit \
 		binutils \
 		mailutils \
 		postfix \
@@ -66,6 +67,7 @@ RUN groupadd -g 750 -o lgsm && \
 	chmod +x /linuxgsm.sh && \
 	cp /linuxgsm.sh /home/lgsm/linuxgsm.sh && \
 	usermod -G tty lgsm && \
+	usermod -aG sudo lgsm && \
 	chown -R lgsm:lgsm /home/lgsm/ && \
 	chmod 755 /home/lgsm
 
