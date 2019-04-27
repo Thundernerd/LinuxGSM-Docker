@@ -14,6 +14,7 @@ RUN dpkg --add-architecture i386 && \
 	apt-get update -y && \
 	apt-get install -y \
 		gedit \
+		nano \
 		binutils \
 		mailutils \
 		postfix \
